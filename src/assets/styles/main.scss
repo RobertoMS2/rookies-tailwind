@@ -1,0 +1,34 @@
+/* Use this file to import partials.      */
+/* Do not include SCSS code in this file. */
+
+/* Import tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import fonts */
+@import "fonts";
+
+/* Import variables */
+@import "variables";
+
+/* Import box model for columns */
+@import "boxes";
+
+// Import npm dependencies
+// see: https://v2.parceljs.org/features/module-resolution/
+// see commented examples below 
+
+// @import "some-node-module";
+// @import "@some-company/some-node-module";
+
+/* Import layouts */
+@import "layouts/home";
+// @import "layouts/the-band";
+// @import "layouts/contact";
+// @import "layouts/gallery";
+
+/* Import tailwind utilities */
+@tailwind utilities;
+
+/* Do NOT include anything else in this file! */

@@ -1,0 +1,59 @@
+/*
+ * Estilos básicos de las etiquetas.
+ */
+
+@layer components {
+    .nav-link {
+        @apply text-secondary hover:text-primary;
+    }
+
+    .header-grid {
+        @apply res-box res-box-head bg-cover;
+    }
+
+    .basic-section {
+        @apply section__elem container mx-auto relative pt-12 sm:pl-24 pl-8 sm:pr-24 pr-8 pb-8;
+    }
+}
+
+@mixin basicBoxBefore {
+    box-shadow: -20px 0 20px -20px #272727 inset;
+    content: " ";
+    height: 100%;
+    left: -20px;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+@mixin basicBoxAfter {
+    box-shadow: 20px 0 20px -20px #272727 inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+}
+
+.header__elem::before   { @include basicBoxBefore(); }
+.header__elem::after    { @include basicBoxAfter(); }
+.section__elem::before  { @include basicBoxBefore(); }
+.section__elem::after   { @include basicBoxAfter(); }
+.footer__elem::before   { @include basicBoxBefore(); }
+.footer__elem::after    { @include basicBoxAfter(); }
+.res-box                { position: relative; width: auto; }
+.res-box:before         { content: ""; display: block; padding-top: 100%;}
+.res-box-head:before    { padding-top: 75.4385964912%; }
+
+@media screen and (max-width: 1280px) {  
+    .header__elem::before,
+    .header__elem::after,
+    .section__elem::before,
+    .section__elem::after,
+    .footer__elem::before,
+    .footer__elem::after {
+      width: 0;
+      display: none;
+    }
+}
